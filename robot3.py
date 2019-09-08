@@ -46,7 +46,7 @@ def stop():
     gpio.output(11, False)
 
 def check():
-    gpio.output(Trig, False)
+    gpio.output(24, False)
     time.sleep(1)       # On la prend toute les 1 seconde
     gpio.output(24, True)
     time.sleep(0.00001)
