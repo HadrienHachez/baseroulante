@@ -38,6 +38,8 @@ def left():
 
 
 forward(1)
+right()
 back(1)
+left()
 
 gpio.cleanup()
