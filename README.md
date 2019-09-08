@@ -8,3 +8,5 @@ source : http://espace-raspberry-francais.fr/Debuter-sur-Raspberry-Francais/Conn
 Incorporation des moteurs
 source :- http://nagashur.com/wiki/doku.php?id=robotique:r_cerda:conception
 	- https://pdf1.alldatasheet.com/datasheet-pdf/view/26889/TI/L293DNE.html
+	- http://espace-raspberry-francais.fr/Composants/Mesure-de-distance-avec-HC-SR04-Raspberry-Francais/
+

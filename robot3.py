@@ -1,30 +1,35 @@
 import RPi.GPIO as gpio
 import time
 
-gpio.setmode(gpio.BOARD)
-
-gpio.setup(7, gpio.OUT)
-gpio.setup(11, gpio.OUT)
-gpio.setup(13, gpio.OUT)
-gpio.setup(15, gpio.OUT)
-
-gpio.setup(24,gpio.OUT)
-gpio.setup(23,gpio.IN)
-
 def forward(dt):
+    gpio.setmode(gpio.BOARD)
+    gpio.setup(7, gpio.OUT)
+    gpio.setup(11, gpio.OUT)
+    gpio.setup(13, gpio.OUT)
+    gpio.setup(15, gpio.OUT)
     gpio.output(13, False)
     gpio.output(15, True)
     gpio.output(7, True)
     gpio.output(11, False)
     time.sleep(dt)
+    gpio.cleanup()
 
 def stop():
+    gpio.setmode(gpio.BOARD)
+    gpio.setup(7, gpio.OUT)
+    gpio.setup(11, gpio.OUT)
+    gpio.setup(13, gpio.OUT)
+    gpio.setup(15, gpio.OUT)
     gpio.output(13, False)
     gpio.output(15, False)
     gpio.output(7, False)
     gpio.output(11, False)
+    gpio.cleanup()
 
 def check():
+    gpio.setmode(gpio.BCM)
+    gpio.setup(24,gpio.OUT)
+    gpio.setup(23,gpio.IN)
     gpio.output(24, False)
     time.sleep(1)       # On la prend toute les 1 seconde
     gpio.output(24, True)
@@ -38,6 +43,7 @@ def check():
 
     d = round((finImpulsion - debutImpulsion) * 340 * 100 / 2, 1)  ## Vitesse du son = 340 m/s
     print(d)
+    gpio.cleanup()
     return d
 
 d = 10
