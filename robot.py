@@ -27,19 +27,19 @@ def right():
     gpio.output(15, True)
     gpio.output(7, False)
     gpio.output(11, True)
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 def left():
     gpio.output(13, True)
     gpio.output(15, False)
     gpio.output(7, True)
     gpio.output(11, False)
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 
-forward(1)
+forward(0.1)
 right()
-back(1)
+back(0.1)
 left()
 
 gpio.cleanup()
