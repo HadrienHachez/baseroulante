@@ -22,8 +22,22 @@ def back(dt):
     gpio.output(11, True)
     time.sleep(dt)
 
+def right():
+    gpio.output(13, False)
+    gpio.output(15, True)
+    gpio.output(7, False)
+    gpio.output(11, True)
+    time.sleep(0.5)
 
-forward(2)
-back(2)
+def left():
+    gpio.output(13, True)
+    gpio.output(15, False)
+    gpio.output(7, True)
+    gpio.output(11, False)
+    time.sleep(0.5)
+
+
+forward(1)
+back(1)
 
 gpio.cleanup()
