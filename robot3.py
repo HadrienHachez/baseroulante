@@ -12,40 +12,22 @@ gpio.setup(24,gpio.OUT)
 gpio.setup(23,gpio.IN)
 
 def forward(dt):
+    gpio.setmode(gpio.BOARD)
     gpio.output(13, False)
     gpio.output(15, True)
     gpio.output(7, True)
     gpio.output(11, False)
     time.sleep(dt)
-
-def back(dt):
-    gpio.output(13, True)
-    gpio.output(15, False)
-    gpio.output(7, False)
-    gpio.output(11, True)
-    time.sleep(dt)
-
-def right():
-    gpio.output(13, False)
-    gpio.output(15, True)
-    gpio.output(7, False)
-    gpio.output(11, True)
-    time.sleep(0.5)
-
-def left():
-    gpio.output(13, True)
-    gpio.output(15, False)
-    gpio.output(7, True)
-    gpio.output(11, False)
-    time.sleep(0.5)
 
 def stop():
+    gpio.setmode(gpio.BOARD)
     gpio.output(13, False)
     gpio.output(15, False)
     gpio.output(7, False)
     gpio.output(11, False)
 
 def check():
+    gpio.setmode(gpio.BCM)
     gpio.output(24, False)
     time.sleep(1)       # On la prend toute les 1 seconde
     gpio.output(24, True)
