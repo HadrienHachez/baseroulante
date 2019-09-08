@@ -71,4 +71,5 @@ while t<20:
     stop()
     d=check()
     t+=1
+    print("hzllo")
 gpio.cleanup()
