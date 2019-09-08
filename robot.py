@@ -41,7 +41,6 @@ def stop():
     gpio.output(15, False)
     gpio.output(7, False)
     gpio.output(11, False)
-    time.sleep(dt)
 
 forward(0.5)
 right()
