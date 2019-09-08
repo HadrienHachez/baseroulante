@@ -66,7 +66,7 @@ while t<20:
     while d<10:
         d=check()
         t+=1
-    foward(0.5)
+    forward(0.5)
     stop()
     d=check()
     t+=1
