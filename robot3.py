@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 import time
 
-gpio.setmode(gpio.BOARD)
+gpio.setmode(gpio.BCM)
 
 gpio.setup(7, gpio.OUT)
 gpio.setup(11, gpio.OUT)
@@ -44,7 +44,6 @@ def stop():
     gpio.output(15, False)
     gpio.output(7, False)
     gpio.output(11, False)
-    time.sleep(dt)
 
 def check():
     gpio.output(Trig, False)
@@ -66,6 +65,7 @@ while t<20:
     while d<10:
         d=check()
     foward(0.5)
+    stop()
     d=check()
 
-GPIO.cleanup()
+gpio.cleanup()
