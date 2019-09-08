@@ -8,8 +8,8 @@ gpio.setup(11, gpio.OUT)
 gpio.setup(13, gpio.OUT)
 gpio.setup(15, gpio.OUT)
 
-GPIO.setup(24,GPIO.OUT)
-GPIO.setup(23,GPIO.IN)
+gpio.setup(24,GPIO.OUT)
+gpio.setup(23,GPIO.IN)
 
 def forward(dt):
     gpio.output(13, False)
@@ -47,15 +47,15 @@ def stop():
     time.sleep(dt)
 
 def check():
-    GPIO.output(Trig, False)
+    gpio.output(Trig, False)
     time.sleep(1)       # On la prend toute les 1 seconde
-    GPIO.output(24, True)
+    gpio.output(24, True)
     time.sleep(0.00001)
-    GPIO.output(24, False)
-    while GPIO.input(23)==0:  ## Emission de l'ultrason
+    gpio.output(24, False)
+    while gpio.input(23)==0:  ## Emission de l'ultrason
         debutImpulsion = time.time()
 
-    while GPIO.input(23)==1:   ## Retour de l'Echo
+    while gpio.input(23)==1:   ## Retour de l'Echo
         finImpulsion = time.time()
 
     d = round((finImpulsion - debutImpulsion) * 340 * 100 / 2, 1)  ## Vitesse du son = 340 m/s
@@ -65,6 +65,7 @@ d = 10
 while t<20:
     while d<10:
         d=check()
-    foward(1)
+    foward(0.5)
+    d=check()
 
 GPIO.cleanup()
