@@ -8,8 +8,8 @@ gpio.setup(11, gpio.OUT)
 gpio.setup(13, gpio.OUT)
 gpio.setup(15, gpio.OUT)
 
-gpio.setup(24,GPIO.OUT)
-gpio.setup(23,GPIO.IN)
+gpio.setup(24,gpio.OUT)
+gpio.setup(23,gpio.IN)
 
 def forward(dt):
     gpio.output(13, False)
