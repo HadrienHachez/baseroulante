@@ -37,6 +37,7 @@ def check():
         finImpulsion = time.time()
 
     d = round((finImpulsion - debutImpulsion) * 340 * 100 / 2, 1)  ## Vitesse du son = 340 m/s
+    print(d)
     return d
 
 d = 10
